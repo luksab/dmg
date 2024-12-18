@@ -113,9 +113,12 @@ String runNotaryTool(String dmg, bool isVerbose) {
     dmg,
     '--keychain-profile',
     'NotaryProfile',
-  ]).stdout;
+  ]);
   if (isVerbose) {
-    print(o);
+    print('notarytool stdout:\n');
+    print(o.stdout);
+    print('stderr:\n');
+    print(o.stderr);
   }
   return o;
 }
